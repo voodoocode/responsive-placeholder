@@ -1,0 +1,138 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Responsive image placeholder generator</title>
+        <link rel="stylesheet" href="css/app.css"/>
+        <script src="bower_components/modernizr/modernizr.js"></script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="medium-12 columns">
+                <h1> Responsive image placeholder generator</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="medium-8 columns">
+                <form>
+                    <div class="row">
+                        <div class="medium-12 columns">
+                            <h3>Srcset</h3>
+
+                            <div class="row">
+                                <label class="small-6 columns">
+                                    width
+                                </label>
+                                <label class="small-6 columns">
+                                    height
+                                </label>
+                            </div>
+
+                            <div class="row collapse js-srcset">
+                                <div class="small-5 columns">
+                                    <input class="js-w" id="w" type="number" min="1" placeholder="300">
+                                </div>
+                                <div class="small-1 columns">
+                                    <span class="postfix">x</span>
+                                </div>
+                                <div class="small-5 columns">
+                                    <input class="js-h" type="number" min="1" placeholder="200">
+                                </div>
+                                <div class="small-1 columns">
+                                    <span class="button postfix radius">Add</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="medium-12 columns">
+                            <h3>Sizes</h3>
+
+                            <div class="row">
+                                <label class="small-6 columns">
+                                    media query
+                                </label>
+                                <label class="small-6 columns">
+                                    length
+                                </label>
+                            </div>
+                            <div class="row collapse js-sizes">
+                                <div class="small-5 columns">
+                                    <input class="js-mq" type="text"
+                                           placeholder="">
+                                </div>
+                                <div class="small-5 push-1 columns">
+                                    <input class="js-length" type="text"
+                                           placeholder="100vw">
+                                </div>
+
+                                <div class="small-1 columns">
+                                    <span class="button postfix radius">Add</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <h3>Result</h3>
+                            <pre class="panel">
+                                <code class="js-output">
+&lt;img src="http://placehold.it/300x200"
+     srcset="
+	    http://placehold.it/300x200 300w"
+     sizes="
+	    100vw"
+     alt="Placeholder"
+/&gt;                           </code>
+                            </pre>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+
+            <div class="medium-4 column">
+                <h3>How To</h3>
+                <p class="panel">
+                    <strong>Srcset:</strong> Insert px values to generate placeholder image urls for the <code>srcset</code> attribute.
+                    <br>
+                    The first line will be used as <code>src</code> attribute for fallback.
+                    <br>
+                    <br>
+                    <strong>Sizes:</strong>
+                    Fill in media query and length to generate the list of <code>sizes</code>.
+                    Read more about lenghts <a href="http://www.w3.org/TR/css3-values/#lengths">here</a>.
+
+                    <br><br>
+                    For general understanding of the whole syntax, I recommend reading <a href="http://ericportis.com/posts/2014/srcset-sizes/">Eric Portis' article</a>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="large-12 columns js-image-output">
+
+                <img src="http://placehold.it/300x200&text=your+image" srcset="
+        http://placehold.it/300x200 300w" sizes="
+         100vw" alt="Placeholder">
+            </div>
+        </div>
+
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/foundation/js/foundation.min.js"></script>
+        <script src="js/app.js"></script>
+        <script>
+            // Picture element HTML5 shiv
+            document.createElement( "picture" );
+        </script>
+        <script src="bower_components/picturefill/dist/picturefill.js" async></script>
+    </body>
+</html>
