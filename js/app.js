@@ -23,9 +23,9 @@ var tag = '' +
 $(document).on('click', '.button', function () {
     var srcset = '', sizes = '', fallback = '';
 
-    //img attribute will get first entry
-    var w = $('.js-w:first').val() != '' ? $('.js-w:first').val(): wDef;
-    var h = $('.js-h:first').val() != '' ? $('.js-h:first').val(): hDef;
+    //img attribute will get last entry
+    var w = $('.js-w:last').val() != '' ? $('.js-w:last').val(): wDef;
+    var h = $('.js-h:last').val() != '' ? $('.js-h:last').val(): hDef;
     fallback = placeholdImg + w + 'x' + h;
 
     //generate lists
