@@ -17,7 +17,7 @@ var tag = '' +
         '  alt="Placeholder" \n' +
         '/>',
 
-    placeholdImg = "http://placehold.it/";
+    placeholdImg = "http://placehold.co/";
 
 
 $(document).on('click', '.button', function () {
